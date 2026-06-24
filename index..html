@@ -1,38 +1,162 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Introduction Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Northstar Tech Studio creates modern digital experiences for ambitious businesses."
+    />
+    <title>Northstar Tech Studio | Modern Digital Growth</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Welcome to My Page</h1>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <img src="car.jpg" alt="My Image" width="300" />
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top">Northstar Tech Studio</a>
+        <nav aria-label="Primary navigation">
+          <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <hr />
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Strategy • Design • Product Launch</p>
+            <h1>We build digital experiences that help brands grow faster.</h1>
+            <p>
+              Northstar Tech Studio helps startups and growing companies turn bold ideas into polished websites, products, and customer journeys.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Book a Consultation</a>
+              <a class="btn btn-secondary" href="#services">Explore Services</a>
+            </div>
+            <ul class="hero-highlights">
+              <li>Mobile-first responsive websites</li>
+              <li>Clear business-focused messaging</li>
+              <li>Fast launch support and strategy</li>
+            </ul>
+          </div>
+          <div class="hero-media">
+            <img src="startup.jpg" alt="A startup team reviewing strategy on a laptop" />
+          </div>
+        </div>
+      </section>
 
-    <p>
-      Hello! My name is Kauthar. I love coding, marketing, and learning new
-      technology.
-    </p>
+      <section class="services" id="services">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="card-grid">
+            <article class="card">
+              <h3>Brand Strategy</h3>
+              <p>We define your positioning, voice, and growth story to make your offer clear and compelling.</p>
+            </article>
+            <article class="card">
+              <h3>Web Design</h3>
+              <p>We create modern, user-friendly websites that look professional and perform well on every device.</p>
+            </article>
+            <article class="card">
+              <h3>Launch Support</h3>
+              <p>From messaging to deployment, we help make your market entry smooth, confident, and memorable.</p>
+            </article>
+          </div>
+          <div class="service-image">
+            <img src="techstartup.jpg" alt="A modern technology startup workspace" />
+          </div>
+        </div>
+      </section>
 
-    <p>
-      <em
-        >Technology is constantly evolving, and I'm passionate about staying
-        updated with the latest trends and tools.</em
-      >
-    </p>
+      <section class="about" id="about">
+        <div class="container about-grid">
+          <div>
+            <h2>About Northstar</h2>
+            <p>
+              We are a fictional consulting and product studio built for ambitious teams that need a smart digital presence without the complexity.
+            </p>
+            <p>
+              Our work blends strategy, design, and implementation so every client gets a professional launch experience from day one.
+            </p>
+          </div>
+          <div class="team-card">
+            <img src="corporate-team-meeting-stockcake.jpg" alt="A professional team meeting around a strategy board" />
+            <h3>Trusted by modern teams</h3>
+            <p>We support founders, marketers, and growing companies with practical digital solutions.</p>
+          </div>
+        </div>
+      </section>
 
-    <p>
-      My journey in web development has been incredibly rewarding. I enjoy
-      creating beautiful and functional websites that solve real problems.
-    </p>
+      <section class="gallery" aria-label="Project highlights">
+        <div class="container">
+          <h2>Recent Inspiration</h2>
+          <div class="gallery-grid">
+            <figure>
+              <img src="1691517271641.jpg" alt="Creative workspace with digital planning tools" />
+              <figcaption>Creative planning session</figcaption>
+            </figure>
+            <figure>
+              <img src="startup.jpg" alt="Startup team discussing growth" />
+              <figcaption>Growth-focused collaboration</figcaption>
+            </figure>
+            <figure>
+              <img src="techstartup.jpg" alt="Technology startup product setup" />
+              <figcaption>Modern product launch environment</figcaption>
+            </figure>
+            <figure>
+              <img src="corporate-team-meeting-stockcake.jpg" alt="Professional team strategy meeting" />
+              <figcaption>Team alignment and planning</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-    <p>
-      <em
-        >When I'm not coding, you can find me exploring new marketing strategies
-        or learning about emerging technologies.</em
-      >
-    </p>
+      <section class="contact" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <h2>Let’s build your next launch</h2>
+            <p>Share your goals and we will help shape a clear digital path for your business.</p>
+            <ul class="contact-details">
+              <li>Email: hello@northstarstudio.com</li>
+              <li>Phone: +1 (555) 014-2218</li>
+              <li>Location: Remote-first, worldwide support</li>
+            </ul>
+          </div>
+
+          <form class="contact-form" aria-label="Contact form" action="#" method="post">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" required />
+
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Inquiry</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© 2026 Northstar Tech Studio</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="X">X</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
