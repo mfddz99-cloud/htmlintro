@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineView Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <header class="top-nav">
+      <div class="logo">
+        <span class="logo-mark">🎬</span>
+        <span>CineView</span>
+      </div>
+
+      <div class="user-controls">
+        <label class="search-box" for="search">
+          <span>🔎</span>
+          <input id="search" type="text" placeholder="Search titles" />
+        </label>
+
+        <div class="profile-pill">
+          <span class="avatar">AL</span>
+          <span>Alicia</span>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a class="nav-link active" href="#">🏠 Home</a>
+        <a class="nav-link" href="#">🔥 Trending</a>
+        <a class="nav-link" href="#">📚 Library</a>
+        <a class="nav-link" href="#">⭐ Watchlist</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="mini-card">
+          <p>4K Streaming</p>
+          <strong>New releases weekly</strong>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content-area">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">Tonight's pick</p>
+          <h2>Midnight Horizons</h2>
+          <p>A cinematic escape filled with neon city lights, mystery, and unforgettable sound.</p>
+        </div>
+        <button>Watch Trailer</button>
+      </section>
+
+      <div class="section-header">
+        <h3>Recommended for You</h3>
+        <a href="#">View all</a>
+      </div>
+
+      <div class="movie-grid">
+        <article class="movie-card">
+          <div class="poster poster-one"></div>
+          <div class="card-content">
+            <h4>Neon Skyline</h4>
+            <p>2024 · Sci-Fi</p>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="poster poster-two"></div>
+          <div class="card-content">
+            <h4>Echoes of Summer</h4>
+            <p>2023 · Drama</p>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="poster poster-three"></div>
+          <div class="card-content">
+            <h4>Velvet Circuit</h4>
+            <p>2022 · Thriller</p>
+          </div>
+        </article>
+
+        <article class="movie-card">
+          <div class="poster poster-four"></div>
+          <div class="card-content">
+            <h4>Golden Hour</h4>
+            <p>2021 · Romance</p>
+          </div>
+        </article>
+      </div>
+
+      <section class="empty-state-section">
+        <div class="empty-state">
+          <h3>Your watchlist is empty</h3>
+          <p>Save movies to keep track of what you want to see next.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section class="design-note">
+    <h4>Design Note</h4>
+    <p>I chose CSS Grid for the main dashboard shell because it makes the sidebar, header, and content areas easy to arrange into distinct sections. I used Flexbox for the header and sidebar navigation because it is better for aligning items in a row or vertical stack with balanced spacing and centering.</p>
+  </section>
+</body>
+</html>

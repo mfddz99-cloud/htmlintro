@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations Demo</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+            padding: 30px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1, h2 { margin-bottom: 10px; }
+        .demo-box {
+            width: 110px;
+            height: 110px;
+            background: #3498db;
+            margin: 20px 0;
+            border-radius: 12px;
+            animation: changeColor 3s infinite;
+        }
+        @keyframes changeColor {
+            from { background-color: #3498db; transform: scale(1); }
+            to { background-color: #2ecc71; transform: scale(1.15); }
+        }
+        .ball {
+            width: 50px;
+            height: 50px;
+            background: #f39c12;
+            border-radius: 50%;
+            position: relative;
+            left: 0;
+            animation: moveRight 2s infinite alternate ease-in-out;
+        }
+        @keyframes moveRight {
+            from { left: 0; }
+            to { left: calc(100% - 50px); }
+        }
+        .card {
+            padding: 16px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+        }
+        .fill-box {
+            padding: 12px;
+            background: #e74c3c;
+            color: white;
+            margin: 12px 0;
+            animation: fillChange 2s ease-in-out 1s forwards;
+        }
+        @keyframes fillChange {
+            from { background: #e74c3c; }
+            to { background: #8e44ad; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Visuals and Interactivity</h1>
+        <p>This page demonstrates CSS animations, movement, timing, and fill behavior.</p>
+
+        <div class="card">
+            <h2>1. Simple Animation</h2>
+            <div class="demo-box"></div>
+        </div>
+
+        <div class="card">
+            <h2>2. Moving Ball</h2>
+            <div class="ball"></div>
+        </div>
+
+        <div class="card">
+            <h2>3. Fill Mode Example</h2>
+            <div class="fill-box">This box keeps the final style after the animation.</div>
+        </div>
+    </div>
+</body>
+</html>

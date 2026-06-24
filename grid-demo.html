@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f4f7fb;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        .inline-grid-container {
+            display: inline-grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .grid-item {
+            background-color: lightcoral;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h3>Inline Grid Example</h3>
+    <div>
+        Here is an example of
+        <span class="inline-grid-container">
+            <span class="grid-item">1</span>
+            <span class="grid-item">2</span>
+            <span class="grid-item">3</span>
+        </span>
+        inline grid.
+    </div>
+
+    <h3>Grid Example</h3>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index Image Stack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #111;
+            color: white;
+        }
+
+        .stack-wrap {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            margin: 40px auto;
+        }
+
+        .image-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card1 { z-index: 1; transform: rotate(-6deg) translate(-10px, 10px); }
+        .card2 { z-index: 2; transform: rotate(4deg) translate(10px, -10px); }
+        .card3 { z-index: 3; transform: rotate(-2deg); }
+        .card4 { z-index: 4; transform: rotate(2deg) translate(8px, 8px); }
+
+        .image-card.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nav-button {
+            margin-top: 20px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 999px;
+            background: #fff;
+            color: #111;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Overlapping image stack</h2>
+    <div class="stack-wrap">
+        <div class="image-card card1 active"><img src="startup.jpg" alt="Startup image"></div>
+        <div class="image-card card2"><img src="techstartup.jpg" alt="Tech startup image"></div>
+        <div class="image-card card3"><img src="corporate-team-meeting-stockcake.jpg" alt="Team meeting image"></div>
+        <div class="image-card card4"><img src="1691517271641.jpg" alt="Workspace image"></div>
+    </div>
+    <button class="nav-button" onclick="nextImage()">Next →</button>
+
+    <script>
+        const cards = Array.from(document.querySelectorAll('.image-card'));
+        let current = 0;
+
+        function nextImage() {
+            cards[current].classList.remove('active');
+            current = (current + 1) % cards.length;
+            cards[current].classList.add('active');
+
+            cards.forEach((card, index) => {
+                if (index === current) {
+                    card.style.zIndex = '4';
+                } else if (index < current) {
+                    card.style.zIndex = '3';
+                } else {
+                    card.style.zIndex = '1';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
