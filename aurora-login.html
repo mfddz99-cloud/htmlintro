@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Login Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #09051b, #171046, #0d1b4d, #0a5f85);
+            color: #fff;
+            position: relative;
+            animation: breathe 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes breathe {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(circle at 20% 20%, rgba(90, 220, 255, 0.28), transparent 25%),
+                        radial-gradient(circle at 80% 30%, rgba(154, 92, 255, 0.24), transparent 28%),
+                        radial-gradient(circle at 50% 80%, rgba(27, 190, 255, 0.2), transparent 30%);
+            filter: blur(60px);
+            animation: drift 14s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes drift {
+            0% { transform: translate3d(-3%, -2%, 0) scale(1); }
+            100% { transform: translate3d(3%, 2%, 0) scale(1.08); }
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(18px);
+            opacity: 0.7;
+            z-index: 1;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        .blob-1 {
+            width: 220px;
+            height: 220px;
+            background: rgba(91, 121, 255, 0.45);
+            top: 8%;
+            left: 10%;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 212, 255, 0.35);
+            bottom: 5%;
+            right: 8%;
+            animation-duration: 10s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(-18px) scale(1.06); }
+        }
+
+        .glass-card {
+            position: relative;
+            z-index: 3;
+            width: min(92vw, 430px);
+            padding: 2.2rem;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            margin: 0 0 0.6rem;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .subtitle {
+            margin: 0 0 1.5rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        input {
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 50px;
+            padding: 0.9rem 1rem;
+            background: rgba(255,255,255,0.14);
+            color: white;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        input:focus {
+            border-color: rgba(255,255,255,0.55);
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 0 0 4px rgba(102, 196, 255, 0.16);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 0.7rem;
+            border: none;
+            border-radius: 50px;
+            padding: 0.95rem 1rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: #07111f;
+            background: linear-gradient(90deg, #6d94ff, #33d5ff);
+            box-shadow: 0 10px 22px rgba(82, 175, 255, 0.3);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px rgba(82, 175, 255, 0.45);
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <main class="glass-card">
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Enter your credentials and step into the Aurora portal.</p>
+        <form>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+            <button type="submit">Enter Portal</button>
+        </form>
+    </main>
+</body>
+</html>
